@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<subscriptions>
+  <subscription name="Netflix">
+	<type>movies</type>
+	<price>8 EUR</price>
+	<subtype>monthly</subtype>
+  </subscription>
+  <subscription name="HBO GO">
+	<type>movies</type>
+	<price>5 EUR</price>
+	<subtype>monthly</subtype>
+  </subscription>
+  <subscription name="Spotify">
+	<type>music</type>
+	<price>5 EUR</price>
+	<subtype>monthly</subtype>
+  </subscription>
+  <subscription name="Apple Music">
+	<type>music</type>
+	<price>99 EUR</price>
+	<subtype>annual</subtype>
+  </subscription>
+  <subscription name="Apple Arcade">
+	<type>games</type>
+	<price>50 EUR</price>
+	<subtype>annual</subtype>
+  </subscription>
+</subscriptions>
