@@ -29,12 +29,20 @@
         private void InitializeComponent()
         {
             this.searchText = new System.Windows.Forms.TextBox();
-            this.searchList = new System.Windows.Forms.ListView();
             this.addButton = new System.Windows.Forms.Button();
-            this.addedList = new System.Windows.Forms.ListView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubType = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // searchText
@@ -45,45 +53,52 @@
             this.searchText.TabIndex = 0;
             this.searchText.TextChanged += new System.EventHandler(this.searchText_TextChanged);
             // 
-            // searchList
-            // 
-            this.searchList.HideSelection = false;
-            this.searchList.HoverSelection = true;
-            this.searchList.Location = new System.Drawing.Point(13, 229);
-            this.searchList.Name = "searchList";
-            this.searchList.Size = new System.Drawing.Size(218, 218);
-            this.searchList.TabIndex = 2;
-            this.searchList.UseCompatibleStateImageBehavior = false;
-            this.searchList.View = System.Windows.Forms.View.List;
-            // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(314, 13);
+            this.addButton.Location = new System.Drawing.Point(15, 202);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.Size = new System.Drawing.Size(84, 23);
             this.addButton.TabIndex = 3;
-            this.addButton.Text = "Add";
+            this.addButton.Text = "Add to your list";
             this.addButton.UseVisualStyleBackColor = true;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
-            // 
-            // addedList
-            // 
-            this.addedList.HideSelection = false;
-            this.addedList.HoverSelection = true;
-            this.addedList.Location = new System.Drawing.Point(314, 57);
-            this.addedList.Name = "addedList";
-            this.addedList.Size = new System.Drawing.Size(218, 218);
-            this.addedList.TabIndex = 4;
-            this.addedList.UseCompatibleStateImageBehavior = false;
-            this.addedList.View = System.Windows.Forms.View.List;
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 57);
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Name,
+            this.Type,
+            this.Price,
+            this.SubType});
+            this.dataGridView1.Location = new System.Drawing.Point(15, 41);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(443, 136);
             this.dataGridView1.TabIndex = 5;
+            // 
+            // Name
+            // 
+            this.Name.DataPropertyName = "name";
+            this.Name.HeaderText = "Name";
+            this.Name.Name = "Name";
+            // 
+            // Type
+            // 
+            this.Type.DataPropertyName = "type";
+            this.Type.HeaderText = "Type";
+            this.Type.Name = "Type";
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "price";
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            // 
+            // SubType
+            // 
+            this.SubType.DataPropertyName = "subtype";
+            this.SubType.HeaderText = "SubType";
+            this.SubType.Name = "SubType";
             // 
             // label1
             // 
@@ -94,20 +109,56 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Search:";
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4});
+            this.dataGridView2.Location = new System.Drawing.Point(15, 254);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(443, 136);
+            this.dataGridView2.TabIndex = 7;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "type";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Type";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "price";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Price";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "subtype";
+            this.dataGridViewTextBoxColumn4.HeaderText = "SubType";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(940, 507);
+            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.addedList);
             this.Controls.Add(this.addButton);
-            this.Controls.Add(this.searchList);
             this.Controls.Add(this.searchText);
-            this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,11 +167,18 @@
         #endregion
 
         private System.Windows.Forms.TextBox searchText;
-        private System.Windows.Forms.ListView searchList;
         private System.Windows.Forms.Button addButton;
-        private System.Windows.Forms.ListView addedList;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubType;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
 
