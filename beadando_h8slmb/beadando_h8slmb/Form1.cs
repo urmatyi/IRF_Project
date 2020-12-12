@@ -37,7 +37,6 @@ namespace beadando_h8slmb
                 string price = node["price"].InnerText;
                 string subtype = node["subtype"].InnerText;
 
-
                 var sub = new Subscription();
                 subList.Add(sub);
 
@@ -55,7 +54,7 @@ namespace beadando_h8slmb
         private void addButton_Click(object sender, EventArgs e)
         {
             dataGridView2.DataSource = null;
-
+            
             string name = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             string type = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             string price = dataGridView1.CurrentRow.Cells[2].Value.ToString();
