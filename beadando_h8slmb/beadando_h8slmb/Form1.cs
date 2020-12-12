@@ -52,5 +52,17 @@ namespace beadando_h8slmb
         }
 
         
+
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void searchText_TextChanged(object sender, EventArgs e)
+        {
+            var searchedList = subList.Where(p => p.Name.ToLower().Contains(searchText.Text) ||
+                                             p.Type.ToLower().Contains(searchText.Text)).ToList();
+            dataGridView1.DataSource = searchedList;
+        }
     }
 }
