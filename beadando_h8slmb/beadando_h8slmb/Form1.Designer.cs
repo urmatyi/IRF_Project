@@ -33,6 +33,8 @@
             this.searchList = new System.Windows.Forms.ListView();
             this.addButton = new System.Windows.Forms.Button();
             this.addedList = new System.Windows.Forms.ListView();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // searchText
@@ -84,11 +86,20 @@
             this.addedList.UseCompatibleStateImageBehavior = false;
             this.addedList.View = System.Windows.Forms.View.List;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 281);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 5;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(940, 507);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.addedList);
             this.Controls.Add(this.addButton);
             this.Controls.Add(this.searchList);
@@ -96,6 +107,7 @@
             this.Controls.Add(this.searchText);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -108,6 +120,7 @@
         private System.Windows.Forms.ListView searchList;
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.ListView addedList;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

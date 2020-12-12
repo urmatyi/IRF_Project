@@ -14,82 +14,43 @@ namespace beadando_h8slmb
 {
     public partial class Form1 : Form
     {
-
+        //BindingList<Subscription> Subscriptions = new BindingList<Subscription>();
+        List<Subscription> subList = new List<Subscription>();
 
         public Form1()
         {
             InitializeComponent();
-            
+
+            XmlLoad();
+
+        }
+
+        private void XmlLoad()
+        {
+            XmlDocument xml = new XmlDocument();
+            xml.Load("subscriptions.xml");
+
+            XmlNodeList nodeList = xml.SelectNodes("/subscriptions/subscription");
+            foreach (XmlNode node in nodeList)
+            {
+                string name = node["name"].InnerText;
+                string type = node["type"].InnerText;
+                string price = node["price"].InnerText;
+                string subtype = node["subtype"].InnerText;
+
+
+                var sub = new Subscription();
+                subList.Add(sub);
+
+                sub.Name = name;
+                sub.Type = type;
+                sub.Price = price;
+                sub.SubType = subtype;
+            }
+
+            dataGridView1.DataSource = subList;
         }
 
         
-
-        private void searchButton_Click(object sender, EventArgs e)
-        {
-            searchList.Clear();
-            if (searchText.Text  != null)
-            {
-                XmlDocument doc = new XmlDocument();
-                doc.Load("subscriptions.xml");
-
-                foreach (XmlNode node in doc.DocumentElement)
-                {
-                    
-
-                    
-                    if (node.FirstChild.InnerText.ToLower().Contains(searchText.Text))
-                    {
-                        foreach (XmlNode searchedchild in node.ChildNodes)
-                        {
-                            searchList.Items.Add(searchedchild.InnerText);
-                        }
-                        searchList.Items.Add("");
-                    }
-                    else
-                    {
-                        foreach (XmlNode child in node.ChildNodes)
-                        {
-                            string childText = child.InnerText.ToLower();
-                            if (childText.Contains(searchText.Text.ToLower()))
-                            {
-                                foreach (XmlNode searchedchild in node.ChildNodes)
-                                {
-                                    searchList.Items.Add(searchedchild.InnerText);
-                                }
-                                searchList.Items.Add("");
-                            }
-                        }
-                    }
-                    
-                }
-            }
-        }
-
-        private void addButton_Click(object sender, EventArgs e)
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load("subscriptions.xml");
-
-            try
-            {
-                foreach (XmlNode node in doc.DocumentElement)
-            {
-                string name = node.Attributes[0].InnerText;
-                
-
-                    if (searchList.SelectedItems[0].ToString().ToLower().Contains(name.ToLower()))
-                    {
-                        addedList.Items.Add(name);
-                    }
-                              
-            }
-
-            }
-            catch
-            {
-                MessageBox.Show("Please select a subscription!");
-            }
-            searchList.SelectedItems.Clear();
-        }
     }
 }

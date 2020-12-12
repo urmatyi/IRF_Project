@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace beadando_h8slmb.Entities
 {
-    public class Subscriptions
+    public class Subscription
     {
         public string Name { get; set; }
         public string Type { get; set; }
