@@ -49,7 +49,6 @@ namespace beadando_h8slmb
             dataGridView1.DataSource = subList;
         }
 
-        List<Subscription> newitem = new List<Subscription>();
 
         private void addButton_Click(object sender, EventArgs e)
         {
@@ -61,13 +60,13 @@ namespace beadando_h8slmb
             string subtype = dataGridView1.CurrentRow.Cells[3].Value.ToString();
 
             var sub = new Subscription();
-            newitem.Add(sub);
+            yoursub.Add(sub);
             sub.Name = name;
             sub.Type = type;
             sub.Price = price;
             sub.SubType = subtype;
             
-            dataGridView2.DataSource = newitem;
+            dataGridView2.DataSource = yoursub;
             
         }
 
@@ -76,6 +75,34 @@ namespace beadando_h8slmb
             var searchedList = subList.Where(s => s.Name.ToLower().Contains(searchText.Text.ToLower()) ||
                                              s.Type.ToLower().Contains(searchText.Text.ToLower())).ToList();
             dataGridView1.DataSource = searchedList;
+        }
+
+        private void removeButton_Click(object sender, EventArgs e)
+        {
+            if (removeCombo.SelectedIndex==0)
+            {
+                dataGridView2.DataSource = null;
+
+                var itemToRemove = yoursub.FirstOrDefault(r => r.Name.ToLower().Contains(removeText.Text.ToLower()));
+                yoursub.Remove(itemToRemove);
+                dataGridView2.DataSource = yoursub;
+            }
+            else
+            {
+                if (removeCombo.SelectedIndex == 1)
+                {
+                    dataGridView2.DataSource = null;
+
+                    var itemToRemoveList = yoursub.Where(r => r.Type.ToLower().Contains(removeText.Text.ToLower())).ToList();
+                    yoursub = yoursub.Except(itemToRemoveList).ToList();
+                    dataGridView2.DataSource = yoursub;
+                }
+                else
+                {
+                    MessageBox.Show("Please select an item from the Remove by list.");
+                }
+            }
+            
         }
     }
 }

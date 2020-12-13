@@ -31,7 +31,7 @@
             this.searchText = new System.Windows.Forms.TextBox();
             this.addButton = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Name_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Type = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubType = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,13 +41,18 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.removeButton = new System.Windows.Forms.Button();
+            this.removeCombo = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.removeText = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // searchText
             // 
-            this.searchText.Location = new System.Drawing.Point(62, 15);
+            this.searchText.Location = new System.Drawing.Point(65, 15);
             this.searchText.Name = "searchText";
             this.searchText.Size = new System.Drawing.Size(178, 20);
             this.searchText.TabIndex = 0;
@@ -55,7 +60,7 @@
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(15, 202);
+            this.addButton.Location = new System.Drawing.Point(15, 192);
             this.addButton.Name = "addButton";
             this.addButton.Size = new System.Drawing.Size(84, 23);
             this.addButton.TabIndex = 3;
@@ -67,7 +72,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Name,
+            this.Name_,
             this.Type,
             this.Price,
             this.SubType});
@@ -76,11 +81,11 @@
             this.dataGridView1.Size = new System.Drawing.Size(443, 136);
             this.dataGridView1.TabIndex = 5;
             // 
-            // Name
+            // Name_
             // 
-            this.Name.DataPropertyName = "name";
-            this.Name.HeaderText = "Name";
-            this.Name.Name = "Name";
+            this.Name_.DataPropertyName = "name";
+            this.Name_.HeaderText = "Name";
+            this.Name_.Name = "Name_";
             // 
             // Type
             // 
@@ -103,7 +108,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 18);
+            this.label1.Location = new System.Drawing.Point(15, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 6;
@@ -146,11 +151,62 @@
             this.dataGridViewTextBoxColumn4.HeaderText = "SubType";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
+            // removeButton
+            // 
+            this.removeButton.Location = new System.Drawing.Point(286, 411);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(117, 23);
+            this.removeButton.TabIndex = 8;
+            this.removeButton.Text = "Remove from your list";
+            this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.removeButton_Click);
+            // 
+            // removeCombo
+            // 
+            this.removeCombo.FormattingEnabled = true;
+            this.removeCombo.Items.AddRange(new object[] {
+            "Name",
+            "Type"});
+            this.removeCombo.Location = new System.Drawing.Point(15, 413);
+            this.removeCombo.Name = "removeCombo";
+            this.removeCombo.Size = new System.Drawing.Size(121, 21);
+            this.removeCombo.TabIndex = 9;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 394);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 13);
+            this.label2.TabIndex = 10;
+            this.label2.Text = "Remove by:";
+            // 
+            // removeText
+            // 
+            this.removeText.Location = new System.Drawing.Point(142, 414);
+            this.removeText.Name = "removeText";
+            this.removeText.Size = new System.Drawing.Size(100, 20);
+            this.removeText.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 235);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 13);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Your liist:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 655);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.removeText);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.removeCombo);
+            this.Controls.Add(this.removeButton);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
@@ -171,15 +227,20 @@
         private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Name;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubType;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Name_;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Type;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubType;
+        private System.Windows.Forms.Button removeButton;
+        private System.Windows.Forms.ComboBox removeCombo;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox removeText;
+        private System.Windows.Forms.Label label3;
     }
 }
 
