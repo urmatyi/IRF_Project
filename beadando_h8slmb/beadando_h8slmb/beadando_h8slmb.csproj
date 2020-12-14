@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Subscription.cs" />
+    <Compile Include="Entities\subtype_enum.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

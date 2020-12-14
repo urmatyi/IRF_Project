@@ -46,6 +46,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.removeText = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.saveButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -197,11 +198,22 @@
             this.label3.TabIndex = 12;
             this.label3.Text = "Your liist:";
             // 
+            // saveButton
+            // 
+            this.saveButton.Location = new System.Drawing.Point(18, 473);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.TabIndex = 13;
+            this.saveButton.Text = "Save your list";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(471, 655);
+            this.Controls.Add(this.saveButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.removeText);
             this.Controls.Add(this.label2);
@@ -241,6 +253,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox removeText;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button saveButton;
     }
 }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -53,7 +54,7 @@ namespace beadando_h8slmb
         private void addButton_Click(object sender, EventArgs e)
         {
             dataGridView2.DataSource = null;
-            
+
             string name = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             string type = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             string price = dataGridView1.CurrentRow.Cells[2].Value.ToString();
@@ -87,6 +88,7 @@ namespace beadando_h8slmb
                 yoursub.Remove(itemToRemove);
                 dataGridView2.DataSource = yoursub;
             }
+
             else
             {
                 if (removeCombo.SelectedIndex == 1)
@@ -103,6 +105,36 @@ namespace beadando_h8slmb
                 }
             }
             
+        }
+
+        private void saveButton_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.ShowDialog();
+
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                using (StreamWriter sw = new StreamWriter(sfd.FileName, false, Encoding.UTF8))
+                {
+                    sw.Write("Name");
+                    sw.Write(',');
+                    sw.Write("Type");
+                    sw.Write(',');
+                    sw.Write("Price");
+                    sw.Write(',');
+                    sw.WriteLine("SubType");
+                    foreach (var list in yoursub)
+                    {
+                        sw.Write(list.Name);
+                        sw.Write(',');
+                        sw.Write(list.Type);
+                        sw.Write(',');
+                        sw.Write(list.Price);
+                        sw.Write(',');
+                        sw.WriteLine(list.SubType);
+                    }
+                }
+            }
         }
     }
 }
