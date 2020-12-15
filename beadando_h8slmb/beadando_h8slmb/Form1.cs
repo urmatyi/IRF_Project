@@ -17,16 +17,21 @@ namespace beadando_h8slmb
     {
         List<Subscription> subList = new List<Subscription>();
         List<Subscription> yoursub = new List<Subscription>();
+
         public Form1()
         {
             InitializeComponent();
 
             XmlLoad();
 
+            
         }
 
         private void XmlLoad()
         {
+
+            
+
             XmlDocument xml = new XmlDocument();
             xml.Load("subscriptions.xml");
 
@@ -36,7 +41,7 @@ namespace beadando_h8slmb
                 string name = node["name"].InnerText;
                 string type = node["type"].InnerText;
                 string price = node["price"].InnerText;
-                string subtype = node["subtype"].InnerText;
+                string subtype = ((subtype_enum) Convert.ToInt32( node["subtype"].InnerText)).ToString();
 
                 var sub = new Subscription();
                 subList.Add(sub);
@@ -48,6 +53,10 @@ namespace beadando_h8slmb
             }
 
             dataGridView1.DataSource = subList;
+
+            dataGridView1.Height = (dataGridView1.Rows.Count + 1) * dataGridView1.Rows[0].Height + 1;
+
+
         }
 
 
@@ -67,8 +76,7 @@ namespace beadando_h8slmb
             sub.Price = price;
             sub.SubType = subtype;
             
-            dataGridView2.DataSource = yoursub;
-            
+
         }
 
         private void searchText_TextChanged(object sender, EventArgs e)
@@ -104,8 +112,18 @@ namespace beadando_h8slmb
                     MessageBox.Show("Please select an item from the Remove by list.");
                 }
             }
-            
-        }
+            try
+            {
+
+
+                dataGridView2.Height = (dataGridView2.Rows.Count + 1) * dataGridView2.Rows[0].Height + 1;
+            }
+            catch 
+            {
+                dataGridView2.Height = 22;
+            }
+
+            }
 
         private void saveButton_Click(object sender, EventArgs e)
         {

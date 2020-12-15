@@ -79,7 +79,7 @@
             this.SubType});
             this.dataGridView1.Location = new System.Drawing.Point(15, 41);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(443, 136);
+            this.dataGridView1.Size = new System.Drawing.Size(443, 133);
             this.dataGridView1.TabIndex = 5;
             // 
             // Name_
@@ -124,8 +124,9 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4});
             this.dataGridView2.Location = new System.Drawing.Point(15, 254);
+            this.dataGridView2.MaximumSize = new System.Drawing.Size(10000, 136);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(443, 136);
+            this.dataGridView2.Size = new System.Drawing.Size(443, 22);
             this.dataGridView2.TabIndex = 7;
             // 
             // dataGridViewTextBoxColumn1
@@ -202,7 +203,7 @@
             // 
             this.saveButton.Location = new System.Drawing.Point(18, 473);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(75, 23);
+            this.saveButton.Size = new System.Drawing.Size(81, 23);
             this.saveButton.TabIndex = 13;
             this.saveButton.Text = "Save your list";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -212,7 +213,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(471, 655);
+            this.ClientSize = new System.Drawing.Size(471, 511);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.removeText);

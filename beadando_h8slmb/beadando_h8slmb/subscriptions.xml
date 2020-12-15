@@ -4,30 +4,30 @@
 			<name>Netflix</name>
 			<type>movies</type>
 			<price>8 EUR</price>
-			<subtype>monthly</subtype>
+			<subtype>1</subtype>
 		</subscription>
 		<subscription name="HBO GO">
 			<name>HBO GO</name>
 			<type>movies</type>
 			<price>5 EUR</price>
-			<subtype>monthly</subtype>
+			<subtype>1</subtype>
 		</subscription>
 		<subscription name="Spotify">
 			<name>Spotify</name>
 			<type>music</type>
 			<price>5 EUR</price>
-			<subtype>monthly</subtype>
+			<subtype>1</subtype>
 		</subscription>
 		<subscription name="Apple Music">
 			<name>Apple Music</name>
 			<type>music</type>
 			<price>99 EUR</price>
-			<subtype>annual</subtype>
+			<subtype>2</subtype>
 		</subscription>
 		<subscription name="Apple Arcade">
 			<name>Apple Arcade</name>
 			<type>games</type>
 			<price>50 EUR</price>
-			<subtype>annual</subtype>
+			<subtype>2</subtype>
 		</subscription>
 	</subscriptions>
