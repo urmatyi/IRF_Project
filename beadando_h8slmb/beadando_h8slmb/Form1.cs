@@ -75,7 +75,10 @@ namespace beadando_h8slmb
             sub.Type = type;
             sub.Price = price;
             sub.SubType = subtype;
-            
+
+            dataGridView2.DataSource = yoursub;
+
+            dataGridView2.Height = (dataGridView2.Rows.Count + 1) * dataGridView2.Rows[0].Height + 1;
 
         }
 
