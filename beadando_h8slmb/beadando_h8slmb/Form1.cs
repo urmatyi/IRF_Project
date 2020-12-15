@@ -24,13 +24,10 @@ namespace beadando_h8slmb
 
             XmlLoad();
 
-            
         }
 
         private void XmlLoad()
         {
-
-            
 
             XmlDocument xml = new XmlDocument();
             xml.Load("subscriptions.xml");
@@ -55,7 +52,6 @@ namespace beadando_h8slmb
             dataGridView1.DataSource = subList;
 
             dataGridView1.Height = (dataGridView1.Rows.Count + 1) * dataGridView1.Rows[0].Height + 1;
-
 
         }
 
@@ -87,6 +83,8 @@ namespace beadando_h8slmb
             var searchedList = subList.Where(s => s.Name.ToLower().Contains(searchText.Text.ToLower()) ||
                                              s.Type.ToLower().Contains(searchText.Text.ToLower())).ToList();
             dataGridView1.DataSource = searchedList;
+            dataGridView1.Height = (dataGridView1.Rows.Count + 1) * dataGridView1.Rows[0].Height + 1;
+
         }
 
         private void removeButton_Click(object sender, EventArgs e)
@@ -117,8 +115,6 @@ namespace beadando_h8slmb
             }
             try
             {
-
-
                 dataGridView2.Height = (dataGridView2.Rows.Count + 1) * dataGridView2.Rows[0].Height + 1;
             }
             catch 
