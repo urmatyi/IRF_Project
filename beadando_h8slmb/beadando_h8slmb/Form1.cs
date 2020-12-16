@@ -17,6 +17,7 @@ namespace beadando_h8slmb
     {
         List<Subscription> subList = new List<Subscription>();
         List<Subscription> yoursub = new List<Subscription>();
+        List<Subscription> searchedList = new List<Subscription>();
 
         public Form1()
         {
@@ -55,6 +56,14 @@ namespace beadando_h8slmb
 
         }
 
+        private void searchText_TextChanged(object sender, EventArgs e)
+        {
+            searchedList = subList.Where(s => s.Name.ToLower().Contains(searchText.Text.ToLower()) ||
+                                             s.Type.ToLower().Contains(searchText.Text.ToLower())).ToList();
+            dataGridView1.DataSource = searchedList;
+            dataGridView1.Height = (dataGridView1.Rows.Count + 1) * dataGridView1.Rows[0].Height + 1;
+
+        }
 
         private void addButton_Click(object sender, EventArgs e)
         {
@@ -78,14 +87,6 @@ namespace beadando_h8slmb
 
         }
 
-        private void searchText_TextChanged(object sender, EventArgs e)
-        {
-            var searchedList = subList.Where(s => s.Name.ToLower().Contains(searchText.Text.ToLower()) ||
-                                             s.Type.ToLower().Contains(searchText.Text.ToLower())).ToList();
-            dataGridView1.DataSource = searchedList;
-            dataGridView1.Height = (dataGridView1.Rows.Count + 1) * dataGridView1.Rows[0].Height + 1;
-
-        }
 
         private void removeButton_Click(object sender, EventArgs e)
         {
